@@ -9,7 +9,7 @@ This is a simple game in Python, developed during my Programming classes in the 
   - Player 2 uses the arrow keys (`←`, `↑`, `→`, `↓`) to control their character.
 - **Score Counter**: The game includes a score-tracking feature to determine the winner.
 
-## How to Play
+## How to Play 🎮
 
 1. Clone this repository to your local machine.
 2. Ensure you have Python installed on your system.
@@ -17,11 +17,17 @@ This is a simple game in Python, developed during my Programming classes in the 
    ```bash
    python game.py
    ```
-4. Enjoy playing with a friend!
+4. Enjoy playing with a friend! 👥
 
 ## Requirements
 
 - Python 3.x
+
+## Known Issues and Limitations ❌
+
+- **No Barriers**: Players can traverse through the visual boundaries of the field, which may disrupt the gameplay experience.
+- **Lack of Physics for the Disc**: The disc moves erratically and lacks proper direction and control, affecting game dynamics.
+- **Game Never Ends**: The game does not have a defined endpoint or win condition, requiring players to manually stop when desired.
 
 ## Contributing
 
