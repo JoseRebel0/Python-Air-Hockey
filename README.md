@@ -1,4 +1,4 @@
-# Simple Python Game
+# Simple Python Game 🏒
 
 This is a simple game in Python, developed during my Programming classes in the 10th grade as a project to assess students' knowledge of Python.
 
@@ -26,10 +26,6 @@ This is a simple game in Python, developed during my Programming classes in the 
 ## Contributing
 
 Contributions are welcome! If you have suggestions for improvements or new features, feel free to create an issue or submit a pull request.
-
-## License
-
-This project is open-source.
 
 ---
 
