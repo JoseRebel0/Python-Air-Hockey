@@ -1,4 +1,4 @@
-# Simple Python Game 🏒
+# Python Air Hockey 🏒
 
 This is a simple game in Python, developed during my Programming classes in the 10th grade as a project to assess students' knowledge of Python.
 
