@@ -1,10 +1,11 @@
-
+# Importação das bibliotecas
 import pygame
 import math
 import sys, pygame
 from pygame.locals import *
 from pygame.draw import circle
 
+# Definição das cores
 BLACK=(0, 0, 0)
 WHITE=(255, 255, 255)
 GREEN=(0, 255, 0)
@@ -17,6 +18,7 @@ BACKG=(47,68,84)
 YELLOW=(255,186,1)
 GREY=(105,105,105)
 
+# Definição dos jogadores
 def jogador1(screen,x_coord,y_coord):
     pygame.draw.circle(screen, RED2, [x_coord, y_coord], 50, 50)
     pygame.draw.circle(screen, RED, [x_coord, y_coord], 30, 30)
@@ -26,9 +28,11 @@ def jogador2(screen,x_coord2,y_coord2):
     pygame.draw.circle(screen, BLUE2, [x_coord2, y_coord2], 50, 50)
     pygame.draw.circle(screen, BLUE, [x_coord2, y_coord2], 30, 30)    
 
+# Inicia o jogo
 pygame.init()
 
-size=(1000,500)
+# Display do jogo
+size=(1000,500 # Tamanho da janela
 screen=pygame.display.set_mode(size)
 
 pygame.display.set_caption('Air Hockey')
@@ -39,14 +43,16 @@ clock=pygame.time.Clock()
 # Esconder o cursor do rato
 pygame.mouse.set_visible(0)
 
-#Coisas para o disco
+# Personalização do disco
 circle_x = 500
 circle_y = 250
+
 # Velocidade e direção do ângulo
 circle_change_x = 5
 circle_change_y = 5
 
-#Coisas para os controlos
+# Configurações dos controlos
+
 # Velocidade nos pixels por frame
 x_speed = 0
 y_speed = 0
@@ -106,7 +112,7 @@ while not done:
                 y_speed = 0     
 
 
-    #Mover o objeto conforme o veto de velocidade
+    # Mover o objeto conforme o vetor de velocidade
     x_coord += x_speed
     y_coord += y_speed
     x_coord2 += x_speed2
@@ -122,16 +128,18 @@ while not done:
     pygame.draw.line(screen,YELLOW,[625,0],[625,500],2)
     pygame.draw.line(screen,YELLOW,[375,0],[375,500],2)
     
-    #Linhas de perda de velocidade
+    # Linhas de perda de velocidade (não finalizado)
     pygame.draw.line(screen,BLUE3,[0,0],[1000,0],2)
     pygame.draw.line(screen,BLUE3,[0,499],[1000,499],2)
     pygame.draw.line(screen,BLUE3,[0,0],[0,499],2)
     pygame.draw.line(screen,BLUE3,[999,499],[999,0],2)
 
 
-    #Linhas de ponto
+    # Criação das balizas
     pygame.draw.line(screen,GREEN,[0,150],[0,350],1)
     pygame.draw.line(screen,GREEN,[999,150],[999,350],1)
+    
+    # Linhas usadas unicamente para teste
     #pygame.draw.line(screen,YELLOW,[800,0],[0,0],1)
     
     #y_offset=0
@@ -155,12 +163,14 @@ while not done:
     
     #pygame.draw.rect(screen,BLACK,[20,20,250,100],2)
     #pygame.draw.ellipse(screen, BLACK, [20,20,250,100], 2)
+
+    # Desenho do mapa do jogo
     pygame.draw.arc(screen, YELLOW, [870,170,150,155],  math.pi/2,     math.pi, 3)
     pygame.draw.arc(screen, YELLOW, [-22,170,149,150],     0,   math.pi/2, 3)
     pygame.draw.arc(screen, YELLOW,   [-22,171,148,150],3*math.pi/2,   2*math.pi, 3)
     pygame.draw.arc(screen, YELLOW,  [870,170,150,155],    math.pi, 3*math.pi/2, 3)
     
-    #Cículos amarelos
+    # Círculos amarelos
     pygame.draw.circle(screen, YELLOW, [500,250],80,2)
     pygame.draw.circle(screen, YELLOW, [500,250],65,2)
     pygame.draw.circle(screen, YELLOW, [500,250],46,0)
@@ -171,12 +181,12 @@ while not done:
     pygame.draw.circle(screen, WHITE, [800,100],70,2)
     pygame.draw.circle(screen, WHITE, [800,400],70,2)
 
-    #Disco
+    # Desenho do disco
     pygame.draw.circle(screen, BLACK, [circle_x, circle_y], 30, 60)
     pygame.draw.circle(screen, GREY, [circle_x , circle_y ], 20, 35)
 
 
-    #rects para colisão
+    # Rects para colisão
     rectlinha1=pygame.Rect(0,0,1000,0)
     rectlinha2=pygame.Rect(0,499,1000,0)
     rectlinha3=pygame.Rect(0,0,0,499)
@@ -186,30 +196,34 @@ while not done:
     rect3=pygame.Rect(x_coord2, y_coord2,50, 50)
     rect2=pygame.Rect(circle_x, circle_y,30,60)
     rect1 = pygame.Rect(x_coord,y_coord,50,50)
-    #Colisão entre o disco e os jogadores
+    
+    # Colisão entre o disco e os jogadores
     collide= rect1.colliderect(rect2)
     collide2=rect3.colliderect(rect2)
-    #Colisão para ponto
+    
+    # Colisão para ponto
     collide3=rect2.colliderect(rectg1)
     collide4=rect2.colliderect(rectg2)
-    #Colisão para perda de velocidade
+    
+    # Colisão para perda de velocidade
     collide5=rect2.colliderect(rectlinha1)
     collide6=rect2.colliderect(rectlinha2)
     collide7=rect2.colliderect(rectlinha3)
     collide8=rect2.colliderect(rectlinha4)
 
     if collide:
-        print('Colidiu')
+        print('Colisão') # Teste de colisão para a primeira baliza (se colidiu imprime 'Colisão')
         colidiu = True
         circle_change_x = circle_change_x * -1  
 
     if collide2:
-        print('Também colidiu')
+        print('Colisão') # Teste de colisão para a segunda baliza (se colidiu imprime 'Colisão')
         colidiu = True
         circle_change_x = circle_change_x * -1  
 
+    # Teste de colisão para a marcação dos pontos
     if collide3 :
-        print('Ponto!')
+        print('Ponto!') 
         #colidiu=True
         pontos1=pontos1+1
         circle_x = 500
@@ -266,19 +280,19 @@ while not done:
     jogador2(screen, x_coord2, y_coord2)
     
 
-    
+    # Linha de teste
     #pygame.draw.polygon(screen, BLACK, [[100,100], [0,200], [200,200]], 5)
-    font = pygame.font.SysFont('Comic Sans MS', 25, True, False)
+
+    # Display da tabela de pontos
+    font = pygame.font.SysFont('Comic Sans MS', 25, True, False) # Fonte
 
     pontos2
-    text = font.render('Score:'+ str(pontos2),True,BLACK)
+    text = font.render('Score:'+ str(pontos2),True,BLACK) # Pontos do jogador 1
     screen.blit(text, [50, 50])
     
-    text2 = font.render('Score:' + str(pontos1),True,BLACK)
+    text2 = font.render('Score:' + str(pontos1),True,BLACK) # Pontos do jogador 2
     screen.blit(text2, [850, 50])
 
- 
-    
     pygame.display.flip()
 
     clock.tick(150)
