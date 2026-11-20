@@ -1,38 +1,29 @@
 # Python Air Hockey
 
-This is a simple game in Python, developed during my Programming classes in the 10th grade as a project to assess students' knowledge of Python.
+Este é um jogo simples em Python, desenvolvido nas aulas de Programação no 10.º ano, como projeto de avaliação dos conhecimentos de Python.
 
-## Game Overview
+## Descrição do Jogo
 
-- **1v1 Gameplay**: Two players can compete against each other on the same keyboard.
-  - Player 1 uses the `W`, `A`, `S`, `D` keys to control their character.
-  - Player 2 uses the arrow keys (`←`, `↑`, `→`, `↓`) to control their character.
-- **Score Counter**: The game includes a score-tracking feature to determine the winner.
+- **Jogo 1 contra 1**: Dois jogadores podem competir um contra o outro no mesmo teclado.
+  - O Jogador 1 usa as teclas `W`, `A`, `S`, `D` para controlar a sua personagem.
+  - O Jogador 2 usa as teclas de seta (`←`, `↑`, `→`, `↓`) para controlar a sua personagem.
+- **Contador de Pontos**: O jogo inclui um sistema de pontuação para determinar o vencedor.
 
-## How to Play
+## Como Jogar
 
-1. Clone this repository to your local machine.
-2. Ensure you have Python installed on your system.
-3. Run the game using the following command:
+1. Clone este repositório para a sua máquina.
+2. Certifique-se de que tem o Python instalado no seu sistema.
+3. Execute o jogo com o seguinte comando:
    ```bash
    python game.py
    ```
 
-## Requirements
+## Requisitos
 
 - Python 3.x
 
-## Known Issues and Limitations
+## Problemas Conhecidos e Limitações
 
-- **No Barriers**: Players can traverse through the visual boundaries of the field, which may disrupt the gameplay experience.
-- **Lack of Physics for the Disc**: The disc moves erratically and lacks proper direction and control, affecting game dynamics.
-- **Game Never Ends**: The game does not have a defined endpoint or win condition, requiring players to manually stop when desired.
-
-## Contributing
-
-Contributions are welcome! If you have suggestions for improvements or new features, feel free to create an issue or submit a pull request.
-
----
-
-Thank you for checking out my project! I hope you enjoy playing the game as much as I enjoyed creating it.
-
+- **Sem barreiras**: Os jogadores conseguem atravessar os limites visuais do campo, o que pode prejudicar a experiência de jogo.
+- **Falta de física no disco**: O disco move-se de forma errática e não tem direção nem controlo adequados, o que afeta a dinâmica do jogo.
+- **O jogo nunca termina**: O jogo não tem um fim definido nem uma condição de vitória, sendo necessário parar manualmente quando se quiser.
